@@ -33,7 +33,7 @@ function saveIssue(e){
 }
 
 function setStatusClosed(id){
-  var issues = JSON.parse(localStorage.getItem('isues'));
+  var issues = JSON.parse(localStorage.getItem('issues'));
 
   for(var i = 0; i < issues.length; i++){
     if (issues[i].id == id){
@@ -47,7 +47,7 @@ function setStatusClosed(id){
 }
 
 function deleteIssue(id){
-  var issues = JSON.parse(localStorage.getItem('isues'));
+  var issues = JSON.parse(localStorage.getItem('issues'));
 
   for(var i = 0; i < issues.length; i++){
     if (issues[i].id == id){
@@ -61,7 +61,7 @@ function deleteIssue(id){
 }
 
 function fetchIssues(){
-  var issues = JSON.parse(localStorage.getItem('issues'));
+  var issues = JSON.parse(localStorage.getItem('issues')) || [];
   var issuesList = document.getElementById('issuesList')
 
   issuesList.innerHTML = '';
